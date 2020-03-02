@@ -26,7 +26,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "Posts")//Grabs the dictionary "Posts"
-        query.includeKey("author")//Grabs the "author" values
+        query.includeKeys(["author", "caption"])//Grabs the "author" values
         query.limit = 20
         
         query.findObjectsInBackground { (posts, error) in
@@ -51,7 +51,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.userLabel.text = user.username
         
-        cell.captionLabel.text = post["caption"] as! String
+        cell.captionLabel.text = post["caption"] as? String
         
         let imageFile = post["image"] as! PFFileObject
         let urlString = imageFile.url!

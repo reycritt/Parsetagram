@@ -14,7 +14,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +25,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         post["caption"] = commentField.text
         post["author"] = PFUser.current()!//"PFUser.current()" for whoever is "logged in" in Parse
         let imageData = imageView.image!.pngData()//Uses the scaled image selected from camera/photo library
-        let file = PFFileObject(data: imageData!)//Converts the image into binary that Heroku can save in the database
+        let file = PFFileObject(name: "image.png", data: imageData!)//Converts the image into binary that Heroku can save in the database
         post["image"] = file
         
         post.saveInBackground { (success, error) in//Creates a schema, a list of labelled columns, and will save it to some row in Parse
