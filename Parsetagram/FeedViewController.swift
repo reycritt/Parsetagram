@@ -7,13 +7,60 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
 
-class FeedViewController: UIViewController {
-
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    var posts = [PFObject]()//Contains all values in Heroku
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "Posts")//Grabs the dictionary "Posts"
+        query.includeKey("author")//Grabs the "author" values
+        query.limit = 20
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count//Table view has the amount of posts as the amount of cells displayed
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {//Defines what is visible in the cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell//Cell is recyclable
+        
+        let post = posts[indexPath.row]
+        
+        let user = post["author"] as! PFUser
+        
+        cell.userLabel.text = user.username
+        
+        cell.captionLabel.text = post["caption"] as! String
+        
+        let imageFile = post["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        
+        cell.imageView?.af_setImage(withURL: url)
+        
+        
+        return cell
     }
     
 
