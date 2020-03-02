@@ -17,6 +17,7 @@
 		8B935D5E240B3304009808B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B935D5D240B3304009808B5 /* LoginViewController.swift */; };
 		8B935D60240B330F009808B5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B935D5F240B330F009808B5 /* FeedViewController.swift */; };
 		8B935D62240B53B8009808B5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B935D61240B53B8009808B5 /* CameraViewController.swift */; };
+		8B935D64240B7F6E009808B5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B935D63240B7F6E009808B5 /* PostCell.swift */; };
 		944C0A322EC83E417226EFC8 /* Pods_Parsetagram_ParsetagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63B43C72B38DA95CA31B2F /* Pods_Parsetagram_ParsetagramUITests.framework */; };
 		952D9BFD6EE43C2428CD3BD7 /* Pods_ParsetagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CDD8387998F02B2DD00491 /* Pods_ParsetagramTests.framework */; };
 		C9DFD21E69BCD360B0343811 /* Pods_Parsetagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7964F227C3A4C0E3BF81A106 /* Pods_Parsetagram.framework */; };
@@ -65,6 +66,7 @@
 		8B935D5D240B3304009808B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8B935D5F240B330F009808B5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		8B935D61240B53B8009808B5 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8B935D63240B7F6E009808B5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				8B935D5D240B3304009808B5 /* LoginViewController.swift */,
 				8B935D5F240B330F009808B5 /* FeedViewController.swift */,
 				8B935D61240B53B8009808B5 /* CameraViewController.swift */,
+				8B935D63240B7F6E009808B5 /* PostCell.swift */,
 				8B80344C240B081C00A647DC /* Assets.xcassets */,
 				8B803449240B081B00A647DC /* Main.storyboard */,
 				8B80344E240B081C00A647DC /* LaunchScreen.storyboard */,
@@ -418,6 +421,7 @@
 				8B803444240B081B00A647DC /* AppDelegate.swift in Sources */,
 				8B935D60240B330F009808B5 /* FeedViewController.swift in Sources */,
 				8B803446240B081B00A647DC /* SceneDelegate.swift in Sources */,
+				8B935D64240B7F6E009808B5 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
