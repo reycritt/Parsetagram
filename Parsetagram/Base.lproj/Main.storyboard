@@ -268,7 +268,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dwS-cl-hOA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="G0A-lO-Jtf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="G0A-lO-Jtf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NRx-b1-rvr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -16,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch; programming in here occurs before loading the app
-        
+        //Important parse initialization to connect database link to app
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Parsetagram"
                 configuration.server = "https://obscure-ravine-81958.herokuapp.com/parse"
             })
         )
+        
         return true
     }
 
