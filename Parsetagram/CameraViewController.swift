@@ -58,7 +58,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image = info[.editedImage] as! UIImage
         
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)//Scales the image using AlamofireImage pod using "size"
+        //let scaledImage = image.af_imageScaled(to: size)//Scales the image using AlamofireImage pod using "size"
+        let scaledImage = image.af_imageAspectScaled(toFill: size)//Crops a nicer image
         imageView.image = scaledImage//Sets image
         dismiss(animated: true, completion: nil)//Dismisses the camera view
     }

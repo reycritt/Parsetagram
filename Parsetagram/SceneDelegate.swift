@@ -20,6 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "Parsetagram"
+                configuration.server = "https://obscure-ravine-81958.herokuapp.com/parse"
+            })
+        )
+        
         if PFUser.current() != nil {//Checking if a user is logged in
             let main = UIStoryboard(name: "Main", bundle: nil)//Calls the storyboard titled "Main"
             let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")//Instantiates the view controller
